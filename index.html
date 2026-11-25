@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ivory:#faf8f4;--warm:#f5f0e8;--gold:#b8975a;--gold-l:#d4b87a;--rose:#c9978a;--deep-rose:#9e6b60;--charcoal:#2c2825;--mid:#6b5f58;--blush:#e8d5c4;--border:rgba(184,151,90,.18)}
+:root{--ivory:#fff9f2;--warm:#fdeed9;--gold:#c2703e;--gold-l:#e7a97a;--rose:#e7a97a;--deep-rose:#b25a36;--charcoal:#3a2e26;--mid:#7a6a5e;--blush:#f9d9b8;--sage:#7d8b6a;--border:rgba(199,117,77,.22)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Serif JP',serif;background:var(--ivory);color:var(--charcoal);line-height:1.8;-webkit-font-smoothing:antialiased}
@@ -34,25 +34,25 @@ nav.main a:hover{color:var(--gold)}
 .btn.solid:hover{background:var(--gold);border-color:var(--gold)}
 .btn.rose{border-color:var(--rose);color:var(--deep-rose)}
 .btn.rose:hover{background:var(--rose);color:#fff}
-.hero{max-width:1120px;margin:0 auto;padding:56px 20px 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.hero{max-width:1120px;margin:0 auto;padding:34px 20px 10px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
 .hero .kicker{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:.4em;color:var(--gold);margin-bottom:18px}
 .hero h1{font-weight:400;font-size:clamp(27px,4.4vw,44px);line-height:1.55;letter-spacing:.04em}
 .hero h1 .en{display:block;font-size:clamp(40px,6vw,64px);letter-spacing:.1em;line-height:1.15;margin-bottom:10px}
-.hero p{margin:22px 0 28px;color:var(--mid);font-size:14.5px;max-width:30em}
+.hero p{margin:16px 0 20px;color:var(--mid);font-size:14.5px;max-width:30em}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
 .hero-img{border-radius:4px;overflow:hidden;box-shadow:0 24px 50px rgba(44,40,37,.14)}
-.hero-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4}
-section{max-width:1120px;margin:0 auto;padding:52px 20px}
-.sec-head{text-align:center;margin-bottom:34px}
+.hero-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+section{max-width:1120px;margin:0 auto;padding:30px 20px}
+.sec-head{text-align:center;margin-bottom:20px}
 .sec-head .en{font-size:30px;letter-spacing:.22em;color:var(--charcoal)}
 .sec-head .jp{font-size:12px;letter-spacing:.3em;color:var(--gold);margin-top:4px}
 .sec-head::after{content:"";display:block;width:44px;height:1px;background:var(--gold);margin:16px auto 0}
 .news-list{max-width:760px;margin:0 auto;border-top:1px solid var(--border)}
 .news-item{display:flex;gap:20px;padding:15px 6px;border-bottom:1px solid var(--border);font-size:13.5px;align-items:baseline}
-.news-item time{font-family:'Montserrat',sans-serif;font-size:11.5px;letter-spacing:.12em;color:var(--gold);white-space:nowrap}
-.news-item .tag{font-size:10px;border:1px solid var(--rose);color:var(--deep-rose);border-radius:999px;padding:1px 9px;white-space:nowrap;letter-spacing:.1em}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.cat-tile{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:var(--warm)}
+.news-item time{font-family:'Montserrat',sans-serif;font-size:11.5px;letter-spacing:.12em;color:var(--sage);white-space:nowrap}
+.news-item .tag{font-size:10px;border:1px solid var(--sage);color:var(--sage);border-radius:999px;padding:1px 9px;white-space:nowrap;letter-spacing:.1em}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cat-tile{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;aspect-ratio:16/10;background:var(--warm)}
 .cat-tile img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .cat-tile:hover img{transform:scale(1.05)}
 .cat-tile .cap{position:absolute;inset:auto 0 0 0;padding:26px 16px 12px;background:linear-gradient(transparent,rgba(44,40,37,.72));color:#fff}
@@ -61,7 +61,7 @@ section{max-width:1120px;margin:0 auto;padding:52px 20px}
 .filter{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
 .chip{padding:7px 18px;border:1px solid var(--border);border-radius:999px;font-size:12px;letter-spacing:.14em;background:#fff;cursor:pointer;font-family:'Noto Serif JP',serif;transition:.2s}
 .chip.on{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
 .card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;cursor:pointer;transition:.25s}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(44,40,37,.1)}
 .card .ph{position:relative;aspect-ratio:1;background:var(--warm)}
@@ -75,7 +75,7 @@ section{max-width:1120px;margin:0 auto;padding:52px 20px}
 .card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:11px;color:var(--mid)}
 .card .fav{color:var(--deep-rose)}
 .band{background:var(--charcoal);color:var(--ivory)}
-.band-in{max-width:1120px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.band-in{max-width:1120px;margin:0 auto;padding:34px 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .band .en{font-size:26px;letter-spacing:.2em;color:var(--gold-l)}
 .band h2{font-weight:400;font-size:24px;letter-spacing:.08em;margin:8px 0 14px}
 .band p{font-size:13.5px;color:#cfc8bd;max-width:32em}
@@ -85,8 +85,8 @@ section{max-width:1120px;margin:0 auto;padding:52px 20px}
 .band .ph{border-radius:4px;overflow:hidden}
 .band .ph img{aspect-ratio:4/3;object-fit:cover;width:100%}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.step{background:#fff;border:1px solid var(--border);border-radius:4px;padding:22px 20px}
-.step .no{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold)}
+.step{background:#fff;border:1px solid var(--border);border-radius:4px;padding:16px 18px}
+.step .no{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--sage)}
 .step h3{font-weight:500;font-size:15px;letter-spacing:.1em;margin:6px 0 8px}
 .step p{font-size:12.5px;color:var(--mid)}
 .faq{max-width:760px;margin:0 auto}
@@ -144,7 +144,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);margin-top:30px
   <div>
     <div class="kicker">HANDMADE WEDDING ITEMS</div>
     <h1><span class="en">Asari.made</span>結婚式のペーパーアイテムを、<br>一枚ずつ手作りで。</h1>
-    <p>席札・メニュー表・サンキュータグなど、ウェディングの紙ものを制作しています。2024年に卒花した作家が、花嫁さまの気持ちに寄り添ってお作りします。</p>
+    <p>席札・メニュー表・サンキュータグなど、ウェディングの紙ものを一枚ずつ手作りしています。</p>
     <div class="cta">
       <a class="btn solid" href="https://asarimade.base.shop" target="_blank" rel="noopener">BASEショップを見る</a>
       <a class="btn rose" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram @asari.made</a>
@@ -179,7 +179,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);margin-top:30px
     <div>
       <div class="en">Making</div>
       <h2>制作の様子、のぞけます</h2>
-      <p>席札ができあがるまでの裏側や、日々の制作風景をSNSで発信しています。オーダーの参考にもぜひどうぞ。</p>
+      <p>制作の裏側や日々の様子をSNSで発信中です。</p>
       <div class="cta">
         <a class="btn" href="https://www.tiktok.com/@.asari.made" target="_blank" rel="noopener">TikTok</a>
         <a class="btn" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram</a>
@@ -193,32 +193,28 @@ footer{background:var(--warm);border-top:1px solid var(--border);margin-top:30px
 <section id="about-items">
   <div class="sec-head"><div class="en">About</div><div class="jp">Asari.madeのペーパーアイテムについて</div></div>
   <div style="max-width:760px;margin:0 auto;font-size:13.5px;color:var(--mid)">
-    <p>Asari.made（アサリメイド）は、結婚式のペーパーアイテムを専門に制作するハンドメイドブランドです。人気No.1の「金箔 席札（二つ折り）」は、サイドに輝く金箔が高級感を演出し、どんなテーブルコーディネートにも合わせやすいデザイン。裏面にはゲストへのメッセージも書けます。そのほか、スクエア席札、パール席札、リボン席札、ドリンクメニュー、サンキュータグ、芳名帳（ゲストブック）など、挙式のシーンに合わせたアイテムを一枚ずつ丁寧にお作りしています。</p>
-    <p style="margin-top:12px">ご注文はBASEショップ・minne・Creemaにて受け付けています。ゲストのお名前リストをお送りいただく名入れ対応や、お急ぎ仕上げのご相談も可能です。ウェルカムスペースのレンタルも行っています。</p>
+    <p>Asari.made（アサリメイド）は、結婚式のペーパーアイテム専門のハンドメイドブランドです。人気No.1は金箔 席札（二つ折り）。スクエア席札、パール席札、リボン席札、ドリンクメニュー、サンキュータグ、芳名帳など、挙式に合わせたアイテムを制作しています。</p>
+    <p style="margin-top:10px">ご注文はBASE・minne・Creemaにて受付中。名入れ対応・お急ぎ仕上げの相談、ウェルカムスペースのレンタルも行っています。</p>
   </div>
 </section>
 
 <section id="guide">
   <div class="sec-head"><div class="en">Guide</div><div class="jp">ご注文の流れ</div></div>
   <div class="steps">
-    <div class="step"><div class="no">01</div><h3>ショップで注文</h3><p>BASEまたはminneのショップから、作品と数量を選んでご注文ください。</p></div>
-    <div class="step"><div class="no">02</div><h3>名簿・文案の送付</h3><p>ゲストのお名前リストや、印刷したい文案をお送りいただきます。</p></div>
-    <div class="step"><div class="no">03</div><h3>制作</h3><p>一枚ずつ丁寧に制作します。お急ぎの場合は「お急ぎ仕上げ」もご用意しています。</p></div>
-    <div class="step"><div class="no">04</div><h3>発送・お受け取り</h3><p>完成したら大切に梱包して発送します。挙式の日にお役立てください。</p></div>
+    <div class="step"><div class="no">01</div><h3>ショップで注文</h3><p>BASE・minne・Creemaから、作品と数量を選んで注文。</p></div>
+    <div class="step"><div class="no">02</div><h3>名簿・文案の送付</h3><p>ゲストのお名前リストや文案を送ってください。</p></div>
+    <div class="step"><div class="no">03</div><h3>制作</h3><p>一枚ずつ丁寧に制作。お急ぎ仕上げもあります。</p></div>
+    <div class="step"><div class="no">04</div><h3>発送・お受け取り</h3><p>大切に梱包して発送します。</p></div>
   </div>
 </section>
 
-<section id="voice">
-  <div class="sec-head"><div class="en">Voice</div><div class="jp">お客様の声</div></div>
-  <div class="voice-grid" id="voices"></div>
-</section>
 
 <section id="faq">
   <div class="sec-head"><div class="en">FAQ</div><div class="jp">よくある質問</div></div>
   <div class="faq">
-    <details><summary>注文はどこからできますか？</summary><p>BASEショップとminneからご注文いただけます。作品一覧の各ページからも移動できます。</p></details>
-    <details><summary>ゲストの名前はどうやって伝えますか？</summary><p>ご注文後に名簿（お名前のリスト）をお送りいただき、その内容で印刷します。詳しい手順は各ショップの商品ページをご確認ください。</p></details>
-    <details><summary>納期はどれくらいですか？</summary><p>作品と数量によって異なります。各商品ページの発送目安をご確認ください。お急ぎの場合は「お急ぎ仕上げ」の作品もご用意しています。</p></details>
+    <details><summary>注文はどこからできますか？</summary><p>BASEショップとminne・Creemaからご注文いただけます。</p></details>
+    <details><summary>ゲストの名前はどうやって伝えますか？</summary><p>ご注文後に名簿（お名前リスト）をお送りいただき、その内容で印刷します。</p></details>
+    <details><summary>納期はどれくらいですか？</summary><p>作品と数量によります。各商品ページの発送目安をご確認ください。「お急ぎ仕上げ」もあります。</p></details>
     <details><summary>ウェルカムスペースのレンタルについて知りたいです</summary><p>Instagram（@asari.made）のDMからお気軽にお問い合わせください。</p></details>
   </div>
 </section>
@@ -303,13 +299,7 @@ function render() {
   });
 }
 render();
-const vg = document.getElementById('voices');
-REVIEWS.forEach(r => {
-  const d = document.createElement('div');
-  d.className = 'voice';
-  d.innerHTML = `<div class="tx">${r.text}</div><div class="mt"><span class="pn">${r.product}</span><span>${r.name} さま ・ ${r.date}</span></div>`;
-  vg.appendChild(d);
-});
+const vg = null;
 const modal = document.getElementById('modal');
 function openModal(p) {
   document.getElementById('mImg').src = p.img;
