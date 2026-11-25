@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asari.made — 結婚式ペーパーアイテム</title>
+<meta name="description" content="Asari.made（アサリメイド）。席札・メニュー表・サンキュータグなど、結婚式のペーパーアイテムを一枚ずつ手作りしています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#faf8f4;--warm:#f5f0e8;--gold:#b8975a;--gold-l:#d4b87a;--rose:#c9978a;--deep-rose:#9e6b60;--charcoal:#2c2825;--mid:#6b5f58;--blush:#e8d5c4;--border:rgba(184,151,90,.18)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Serif JP',serif;background:var(--ivory);color:var(--charcoal);line-height:1.8;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.en{font-family:'Cormorant Garamond',serif}
+header{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.hd-in{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:18px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.14em;font-weight:500}
+.logo small{display:block;font-family:'Montserrat',sans-serif;font-size:8.5px;letter-spacing:.34em;color:var(--gold)}
+nav.main{margin-left:auto;display:flex;gap:22px;font-size:12.5px;letter-spacing:.12em}
+nav.main a:hover{color:var(--gold)}
+.hd-btns{display:flex;gap:8px;margin-left:8px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border:1px solid var(--gold);border-radius:999px;font-size:12px;letter-spacing:.14em;transition:.25s;background:transparent;cursor:pointer;font-family:'Noto Serif JP',serif}
+.btn:hover{background:var(--gold);color:#fff}
+.btn.solid{background:var(--charcoal);border-color:var(--charcoal);color:#fff}
+.btn.solid:hover{background:var(--gold);border-color:var(--gold)}
+.btn.rose{border-color:var(--rose);color:var(--deep-rose)}
+.btn.rose:hover{background:var(--rose);color:#fff}
+.hero{max-width:1120px;margin:0 auto;padding:56px 20px 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.hero .kicker{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:.4em;color:var(--gold);margin-bottom:18px}
+.hero h1{font-weight:400;font-size:clamp(27px,4.4vw,44px);line-height:1.55;letter-spacing:.04em}
+.hero h1 .en{display:block;font-size:clamp(40px,6vw,64px);letter-spacing:.1em;line-height:1.15;margin-bottom:10px}
+.hero p{margin:22px 0 28px;color:var(--mid);font-size:14.5px;max-width:30em}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-img{border-radius:4px;overflow:hidden;box-shadow:0 24px 50px rgba(44,40,37,.14)}
+.hero-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4}
+section{max-width:1120px;margin:0 auto;padding:52px 20px}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head .en{font-size:30px;letter-spacing:.22em;color:var(--charcoal)}
+.sec-head .jp{font-size:12px;letter-spacing:.3em;color:var(--gold);margin-top:4px}
+.sec-head::after{content:"";display:block;width:44px;height:1px;background:var(--gold);margin:16px auto 0}
+.news-list{max-width:760px;margin:0 auto;border-top:1px solid var(--border)}
+.news-item{display:flex;gap:20px;padding:15px 6px;border-bottom:1px solid var(--border);font-size:13.5px;align-items:baseline}
+.news-item time{font-family:'Montserrat',sans-serif;font-size:11.5px;letter-spacing:.12em;color:var(--gold);white-space:nowrap}
+.news-item .tag{font-size:10px;border:1px solid var(--rose);color:var(--deep-rose);border-radius:999px;padding:1px 9px;white-space:nowrap;letter-spacing:.1em}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cat-tile{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:var(--warm)}
+.cat-tile img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.cat-tile:hover img{transform:scale(1.05)}
+.cat-tile .cap{position:absolute;inset:auto 0 0 0;padding:26px 16px 12px;background:linear-gradient(transparent,rgba(44,40,37,.72));color:#fff}
+.cat-tile .cap .n{font-size:16.5px;letter-spacing:.14em}
+.cat-tile .cap .c{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:.2em;opacity:.85}
+.filter{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+.chip{padding:7px 18px;border:1px solid var(--border);border-radius:999px;font-size:12px;letter-spacing:.14em;background:#fff;cursor:pointer;font-family:'Noto Serif JP',serif;transition:.2s}
+.chip.on{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;cursor:pointer;transition:.25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(44,40,37,.1)}
+.card .ph{position:relative;aspect-ratio:1;background:var(--warm)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:10px;left:10px;background:var(--gold);color:#fff;font-size:10.5px;letter-spacing:.12em;padding:3px 10px;border-radius:999px}
+.badge.new{background:var(--rose)}
+.card .bd{padding:14px 16px 16px}
+.card .nm{font-size:14.5px;letter-spacing:.05em;line-height:1.55;min-height:3.1em}
+.card .pr{font-family:'Cormorant Garamond',serif;font-size:21px;margin-top:6px}
+.card .pr small{font-family:'Noto Serif JP',serif;font-size:11px;color:var(--mid)}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:11px;color:var(--mid)}
+.card .fav{color:var(--deep-rose)}
+.band{background:var(--charcoal);color:var(--ivory)}
+.band-in{max-width:1120px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.band .en{font-size:26px;letter-spacing:.2em;color:var(--gold-l)}
+.band h2{font-weight:400;font-size:24px;letter-spacing:.08em;margin:8px 0 14px}
+.band p{font-size:13.5px;color:#cfc8bd;max-width:32em}
+.band .cta{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.band .btn{border-color:var(--gold-l);color:var(--ivory)}
+.band .btn:hover{background:var(--gold);color:#fff}
+.band .ph{border-radius:4px;overflow:hidden}
+.band .ph img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.step{background:#fff;border:1px solid var(--border);border-radius:4px;padding:22px 20px}
+.step .no{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold)}
+.step h3{font-weight:500;font-size:15px;letter-spacing:.1em;margin:6px 0 8px}
+.step p{font-size:12.5px;color:var(--mid)}
+.faq{max-width:760px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--border);padding:16px 4px}
+.faq summary{cursor:pointer;font-size:14.5px;letter-spacing:.05em;list-style:none}
+.faq summary::before{content:"Q. ";font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:17px}
+.faq details p{font-size:13px;color:var(--mid);margin-top:10px;padding-left:22px}
+.voice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.voice{background:#fff;border:1px solid var(--border);border-radius:4px;padding:22px}
+.voice .tx{font-size:13.5px}
+.voice .mt{margin-top:12px;font-size:11.5px;color:var(--mid);display:flex;justify-content:space-between}
+.voice .mt .pn{color:var(--gold)}
+footer{background:var(--warm);border-top:1px solid var(--border);margin-top:30px}
+.ft-in{max-width:1120px;margin:0 auto;padding:44px 20px 30px;text-align:center}
+.ft-in .logo{font-size:30px}
+.sns{display:flex;gap:10px;justify-content:center;margin:20px 0 8px;flex-wrap:wrap}
+.copy{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:.2em;color:var(--mid);margin-top:18px}
+.modal{position:fixed;inset:0;background:rgba(44,40,37,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:18px}
+.modal.open{display:flex}
+.modal-box{background:var(--ivory);max-width:640px;width:100%;max-height:88vh;overflow:auto;border-radius:6px}
+.modal-box .ph img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.modal-box .bd{padding:24px 26px 28px}
+.modal-box h3{font-weight:500;font-size:20px;letter-spacing:.05em}
+.modal-box .en2{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:14px;letter-spacing:.08em}
+.modal-box .pr{font-family:'Cormorant Garamond',serif;font-size:28px;margin:10px 0 4px}
+.modal-box .pr small{font-family:'Noto Serif JP',serif;font-size:12px;color:var(--mid)}
+.modal-box .ds{font-size:13.5px;color:var(--mid);white-space:pre-line;margin:14px 0 22px}
+.modal-box .cta{display:flex;gap:10px;flex-wrap:wrap}
+.modal-close{position:sticky;top:0;float:right;margin:10px;background:#fff;border:1px solid var(--border);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px}
+@media(max-width:820px){
+  nav.main{display:none}
+  .hero{grid-template-columns:1fr;padding-top:36px}
+  .band-in{grid-template-columns:1fr}
+  .hd-btns .btn{padding:8px 12px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hd-in">
+    <a class="logo" href="#top">Asari.made<small>WEDDING PAPER ITEMS</small></a>
+    <nav class="main">
+      <a href="#news">お知らせ</a><a href="#category">カテゴリー</a><a href="#works">作品一覧</a><a href="#guide">ご利用ガイド</a><a href="#faq">よくある質問</a>
+    </nav>
+    <div class="hd-btns">
+      <a class="btn" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn solid" href="https://asarimade.base.shop" target="_blank" rel="noopener">Shop</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div>
+    <div class="kicker">HANDMADE WEDDING ITEMS</div>
+    <h1><span class="en">Asari.made</span>結婚式のペーパーアイテムを、<br>一枚ずつ手作りで。</h1>
+    <p>席札・メニュー表・サンキュータグなど、ウェディングの紙ものを制作しています。2024年に卒花した作家が、花嫁さまの気持ちに寄り添ってお作りします。</p>
+    <div class="cta">
+      <a class="btn solid" href="https://asarimade.base.shop" target="_blank" rel="noopener">BASEショップを見る</a>
+      <a class="btn rose" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram @asari.made</a>
+    </div>
+  </div>
+  <div class="hero-img"><img src="https://image.minne.com/minne/mobile_app_product/680x680cq85/ba20737870022ea994c3bf9e77e6c7f5cdc59003.jpeg/productimages/191539393/w1600xh1600/9933c6cf569dbbbfb86bf9df6ea8a5c006f235d1.jpeg?1704779702" alt="Asari.madeの作品"></div>
+</div>
+
+<section id="news">
+  <div class="sec-head"><div class="en">News</div><div class="jp">お知らせ</div></div>
+  <div class="news-list">
+    <div class="news-item"><time>2026.11.25</time><span class="tag">ご案内</span><span>ホームページをリニューアルしました。作品一覧から各ショップへ移動できます。</span></div>
+    <div class="news-item"><time>2026.11.22</time><span class="tag">SNS</span><span>TikTokを始めました。制作の様子を「よなよな」投稿していきます。</span></div>
+    <div class="news-item"><time>2026.11.18</time><span class="tag">新サービス</span><span>ウェルカムスペースのレンタルを始めました。詳しくはInstagramのDMへお気軽にどうぞ。</span></div>
+  </div>
+</section>
+
+<section id="category">
+  <div class="sec-head"><div class="en">Category</div><div class="jp">カテゴリーから探す</div></div>
+  <div class="cat-grid" id="catGrid"></div>
+</section>
+
+<section id="works">
+  <div class="sec-head"><div class="en">Works</div><div class="jp">作品一覧</div></div>
+  <div class="filter" id="filter"></div>
+  <div class="grid" id="grid"></div>
+  <p style="text-align:center;margin-top:28px;font-size:12.5px;color:var(--mid)">ご購入は各作品のページ（minne）または <a href="https://asarimade.base.shop" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline">BASEショップ</a> からどうぞ。</p>
+</section>
+
+<div class="band">
+  <div class="band-in">
+    <div>
+      <div class="en">Making</div>
+      <h2>制作の様子、のぞけます</h2>
+      <p>席札ができあがるまでの裏側や、日々の制作風景をSNSで発信しています。オーダーの参考にもぜひどうぞ。</p>
+      <div class="cta">
+        <a class="btn" href="https://www.tiktok.com/@.asari.made" target="_blank" rel="noopener">TikTok</a>
+        <a class="btn" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="ph"><img src="https://image.minne.com/minne/mobile_app_product/680x680cq85/8510b7a139c90a30a2b0f85423b475ee176ce23e.jpeg/productimages/187626559/w1600xh1600/1f70170bf434d132635736dc1244dbf4f69ab50a.jpeg?1699364849" alt="制作の様子"></div>
+  </div>
+</div>
+
+<section id="guide">
+  <div class="sec-head"><div class="en">Guide</div><div class="jp">ご注文の流れ</div></div>
+  <div class="steps">
+    <div class="step"><div class="no">01</div><h3>ショップで注文</h3><p>BASEまたはminneのショップから、作品と数量を選んでご注文ください。</p></div>
+    <div class="step"><div class="no">02</div><h3>名簿・文案の送付</h3><p>ゲストのお名前リストや、印刷したい文案をお送りいただきます。</p></div>
+    <div class="step"><div class="no">03</div><h3>制作</h3><p>一枚ずつ丁寧に制作します。お急ぎの場合は「お急ぎ仕上げ」もご用意しています。</p></div>
+    <div class="step"><div class="no">04</div><h3>発送・お受け取り</h3><p>完成したら大切に梱包して発送します。挙式の日にお役立てください。</p></div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="sec-head"><div class="en">Voice</div><div class="jp">お客様の声</div></div>
+  <div class="voice-grid" id="voices"></div>
+</section>
+
+<section id="faq">
+  <div class="sec-head"><div class="en">FAQ</div><div class="jp">よくある質問</div></div>
+  <div class="faq">
+    <details><summary>注文はどこからできますか？</summary><p>BASEショップとminneからご注文いただけます。作品一覧の各ページからも移動できます。</p></details>
+    <details><summary>ゲストの名前はどうやって伝えますか？</summary><p>ご注文後に名簿（お名前のリスト）をお送りいただき、その内容で印刷します。詳しい手順は各ショップの商品ページをご確認ください。</p></details>
+    <details><summary>納期はどれくらいですか？</summary><p>作品と数量によって異なります。各商品ページの発送目安をご確認ください。お急ぎの場合は「お急ぎ仕上げ」の作品もご用意しています。</p></details>
+    <details><summary>ウェルカムスペースのレンタルについて知りたいです</summary><p>Instagram（@asari.made）のDMからお気軽にお問い合わせください。</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-in">
+    <div class="logo">Asari.made</div>
+    <div class="sns">
+      <a class="btn" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="https://www.tiktok.com/@.asari.made" target="_blank" rel="noopener">TikTok</a>
+      <a class="btn" href="https://asarimade.base.shop" target="_blank" rel="noopener">BASE</a>
+      <a class="btn" href="https://minne.com/@asari18" target="_blank" rel="noopener">minne</a>
+    </div>
+    <div class="copy">© Asari.made</div>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="ph"><img id="mImg" src="" alt=""></div>
+    <div class="bd">
+      <h3 id="mName"></h3>
+      <div class="en2" id="mEn"></div>
+      <div class="pr" id="mPrice"></div>
+      <div class="ds" id="mDesc"></div>
+      <div class="cta">
+        <a class="btn solid" id="mMinne" href="#" target="_blank" rel="noopener">minneで見る・購入する</a>
+        <a class="btn" href="https://asarimade.base.shop" target="_blank" rel="noopener">BASEショップ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const PRODUCTS = [{"id": 1, "name": "金箔 席札（二つ折り）", "nameEn": "Gold Foil Seat Card — Folded", "price": 1200, "unit": "10枚〜", "perUnit": "1枚¥120", "cat": "席札", "badge": "人気 No.1", "favorites": 325, "desc": "金箔がサイドで輝く上品かつお洒落なデザインです。シンプルなデザインなのでどんなテーブルコーディネートにも合わせやすいです♡\n\n裏面にはメッセージを書くことが可能で、ゲストの方に感謝の気持ちや今までの思い出話等も記入できます。\n\n二つ折りなので独立して立つ事ができます。また、折り線入りなので綺麗に二つ折りできます。", "link": "https://minne.com/items/38873558", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/ba20737870022ea994c3bf9e77e6c7f5cdc59003.jpeg/productimages/191539393/w1600xh1600/9933c6cf569dbbbfb86bf9df6ea8a5c006f235d1.jpeg?1704779702"}, {"id": 2, "name": "金箔 席札（通常）", "nameEn": "Gold Foil Seat Card — Standard", "price": 900, "unit": "10枚〜", "perUnit": "1枚¥90", "cat": "席札", "badge": "定番人気", "favorites": 169, "desc": "金箔がサイドで輝く上品かつお洒落なデザインです。シンプルなデザインなのでどんなテーブルコーディネートにも合わせやすいです。\n\n裏面にはメッセージを書くことが可能で、ゲストの方に感謝の気持ちや今までの思い出話等も記入できます。", "link": "https://minne.com/items/38306343", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/8510b7a139c90a30a2b0f85423b475ee176ce23e.jpeg/productimages/187626559/w1600xh1600/1f70170bf434d132635736dc1244dbf4f69ab50a.jpeg?1699364849"}, {"id": 3, "name": "スクエア 席札", "nameEn": "Square Seat Card", "price": 1000, "unit": "10枚〜", "perUnit": "1枚¥100", "cat": "席札", "badge": "", "favorites": 210, "desc": "正方形のスクエアタイプの席札です。用紙をお選びいただけます。モダンでおしゃれな雰囲気に仕上がります。", "link": "https://minne.com/items/41868336", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/3ca9d0fef08d5c007419d7d6b3718a7a6722e0b3.jpeg/productimages/213243995/w1600xh1600/04a532ab596757044d4e72762695b029151ff851.jpeg?1734601278"}, {"id": 4, "name": "パール 席札（二つ折り）", "nameEn": "Pearl Seat Card — Folded", "price": 1500, "unit": "10枚〜", "perUnit": "1枚¥150", "cat": "席札", "badge": "", "favorites": 80, "desc": "上品なパール用紙を使った二つ折り席札です。高級感のある仕上がりで、格式あるウェディングにぴったりです。", "link": "https://minne.com/items/39181601", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/efd39348e62917e9e2c7bace123520927a4341ab.jpeg/productimages/193910470/w1600xh1600/d5b8186307ed9402675408e85e48b4598811b22b.jpeg?1707729746"}, {"id": 5, "name": "リボン 席札", "nameEn": "Ribbon Seat Card", "price": 1800, "unit": "10枚〜", "perUnit": "1枚¥180", "cat": "席札", "badge": "", "favorites": 55, "desc": "リボンをあしらった可愛らしい席札です。3種類のデザインからお選びいただけます。ナチュラルウェディングにおすすめです。", "link": "https://minne.com/items/37759487", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/10d4cac52590e574741fc42b6b415b4affe8aa5a.jpeg/productimages/193567024/w1600xh1600/71afad8a03e2e6e6394eaf352695135fadca2c75.jpeg?1707311083"}, {"id": 6, "name": "ドリンクメニュー（フォントカラー選択）", "nameEn": "Drink Menu — Select Font Color", "price": 1100, "unit": "10枚〜", "perUnit": "1枚¥110", "cat": "メニュー", "badge": "♡×90", "favorites": 90, "desc": "フォントカラーをお選びいただける両面印刷のドリンクメニューです。おしゃれな結婚式・披露宴にぴったりです。\n\nお好みのフォントカラーをお選びいただき、ドリンクリストをお送りください。", "link": "https://minne.com/items/43398710", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/a53e3f4bb4ad6b8e974e8b58a349e6cfd7b25fcd.jpeg/productimages/224323151/w1600xh1600/3063764006c2dfabad23cfe9ee48f7c2b2621221.jpeg?1751785678"}, {"id": 7, "name": "シンプル ドリンクメニュー", "nameEn": "Simple Drink Menu", "price": 1000, "unit": "10枚〜", "perUnit": "1枚¥100", "cat": "メニュー", "badge": "NEW", "favorites": 35, "desc": "シンプルなデザインの両面印刷ドリンクメニューです。用紙をお選びいただけます。どんなテーブルコーディネートにも合わせやすいクリーンなデザインです。", "link": "https://minne.com/items/44583229", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/dc0ada12d5ca47f4da560b8e83445f1831779684.jpeg/productimages/233675887/w1600xh1600/2ab0c5b6184872b7df1e09c42dc88553cbb1d100.jpg?1767432767"}, {"id": 8, "name": "サンキュータグ", "nameEn": "Thank You Tags", "price": 500, "unit": "10枚〜", "perUnit": "1枚¥50", "cat": "タグ", "badge": "♡×170", "favorites": 170, "desc": "プチギフトに添えるサンキュータグです。名前・日付をご指定いただけます。かわいくてコスパ抜群です。", "link": "https://minne.com/items/37371696", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/e522588156a753dd1c840f202e6859532f5690a8.jpeg/productimages/183990085/w1600xh1600/eba694fd73e1ba2ddc5b5bd53a105e3c67665670.jpeg?1694668931"}, {"id": 9, "name": "サンキューシール（ニュアンスクリア）", "nameEn": "Thank You Sticker — Nuance Clear", "price": 3500, "unit": "1セット", "perUnit": "", "cat": "タグ", "badge": "NEW", "favorites": 15, "desc": "3種類から選べる名入りサンキューシールです。ラッピングやプチギフトに添えるのにぴったりです。ニュアンスクリアな素材でおしゃれな仕上がりです。", "link": "https://minne.com/items/45179705", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/0cc2902e939e799907e897add0f563f9fc004d6e.jpeg/productimages/237787974/w1600xh1600/5cfc90c3dabcba066ae72bb3ab9f53b2ab4931d6.jpg?1774342826"}, {"id": 10, "name": "写ルンです フィルムカメラカバー", "nameEn": "Disposable Camera Cover", "price": 350, "unit": "1部〜", "perUnit": "", "cat": "その他", "badge": "♡×40", "favorites": 40, "desc": "写ルンです・使い捨てカメラに巻くカバーです。結婚式のテーブルに置いてゲストに撮影してもらえます。名前・日付入りでかわいく仕上がります。", "link": "https://minne.com/items/43027333", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/fd7c461cb898537b46b769866662b891d6ee67c0.jpeg/productimages/221514376/w1600xh1600/c64371c7287d8a589415ecf85a303350ce53689a.jpeg?1747402323"}, {"id": 11, "name": "芳名帳 ゲストブック（表紙付8枚セット）", "nameEn": "Guest Book Set", "price": 1200, "unit": "1セット", "perUnit": "", "cat": "芳名帳", "badge": "♡×80", "favorites": 80, "desc": "表紙付き8枚セットの芳名帳・ゲストブックです。ゲストのお名前・メッセージを残していただけます。\n\n結婚式後も大切な思い出として手元に残せます。", "link": "https://minne.com/items/41127605", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/2ce8171a046c81ffa63ab3959251290908a95dac.jpeg/productimages/216793140/w1600xh1600/efd5cca38441607fe42e03251ea01e5db9868144.jpeg?1740051522"}, {"id": 12, "name": "御車代 封筒", "nameEn": "Travel Expense Envelope", "price": 100, "unit": "1枚〜", "perUnit": "1枚¥100", "cat": "その他", "badge": "", "favorites": 45, "desc": "新郎新婦様のお名前・挙式日を入力できる御車代封筒です。カラーをお選びいただけます。おしゃれなデザインで大切なゲストへお渡しできます。", "link": "https://minne.com/items/44647339", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/72a9bf3533979e253a95e6e763aba8659c06ea4a.jpeg/productimages/235492982/w1600xh1600/a2f9fa2cbb764841ef7cb68c5518b43a6af393c8.jpeg?1770482296"}, {"id": 13, "name": "フォトサイン（QRコード付き）", "nameEn": "Photo Sign with QR Code", "price": 1000, "unit": "1点", "perUnit": "", "cat": "その他", "badge": "NEW", "favorites": 12, "desc": "QRコードを入れることができるおしゃれなフォトサインです。用紙をお選びいただけます。SNSのURLやウェルカムページへ誘導できます。", "link": "https://minne.com/items/45054188", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/b402430b34c376b1de9fc379c8c8079a4969538a.jpeg/productimages/236836356/w1600xh1600/8f26e552f0f5ffde51d1e08a7e1654ff15c9212b.jpg?1772714007"}, {"id": 14, "name": "月齢カード（ニュアンス）", "nameEn": "Monthly Growth Card", "price": 1280, "unit": "12枚セット", "perUnit": "", "cat": "ベビー", "badge": "NEW", "favorites": 8, "desc": "赤ちゃんの成長を記録できる月齢カードです。足形スタンプや月齢フォトに使えます。ニュアンスカラーでおしゃれな仕上がりです。", "link": "https://minne.com/items/45441248", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/24b27e912257781ffb58f0021db4c66daacdda72.jpeg/productimages/239708033/w1600xh1600/d5316eab0eeebec2645b5a6fba63f024077b521c.jpg?1777779297"}, {"id": 15, "name": "カスタマイズ料金", "nameEn": "Customization Fee", "price": 700, "unit": "1件", "perUnit": "", "cat": "その他", "badge": "", "favorites": 30, "desc": "2色以上の用紙・フォントカラーなどのカスタマイズをご希望の場合に追加でご購入ください。", "link": "https://minne.com/items/39206079", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/d58b4ffc6391824136f276adf628aa1d865af960.jpeg/productimages/225630131/w1600xh1600/9602ac994f47febb2f132cc69d7cd439816f5511.jpeg?1753947705"}, {"id": 16, "name": "お急ぎ仕上げ", "nameEn": "Rush Order Fee", "price": 1500, "unit": "1件", "perUnit": "", "cat": "その他", "badge": "", "favorites": 20, "desc": "通常10日以内のところ、お急ぎで対応が必要な場合に追加購入ください。他の商品と合わせてご購入いただくことで優先対応いたします。", "link": "https://minne.com/items/37788896", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/afdc20236b2b6f42e2b136d8bfd4d3c576983d27.jpeg/productimages/225629725/w1600xh1600/213580f1baef40308524f785a8274ccb17ae9536.jpeg?1753947304"}, {"id": 17, "name": "席札 通常（展示中）", "nameEn": "Seat Card — Display", "price": 90, "unit": "1枚〜", "perUnit": "", "cat": "席札", "badge": "", "favorites": 60, "desc": "金箔席札の通常版展示品です。実物の質感・デザインをご確認いただけます。", "link": "https://minne.com/items/36665711", "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/9af5e8aab38eba2f03d817585fdc851663aae522.jpeg/productimages/183989484/w1600xh1600/3c9fa7e46c3b8c41da0868ee432bcfcc6b9785af.jpeg?1694668571"}];
+const CATS = [{"name": "席札", "count": 6, "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/ba20737870022ea994c3bf9e77e6c7f5cdc59003.jpeg/productimages/191539393/w1600xh1600/9933c6cf569dbbbfb86bf9df6ea8a5c006f235d1.jpeg?1704779702"}, {"name": "メニュー", "count": 2, "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/a53e3f4bb4ad6b8e974e8b58a349e6cfd7b25fcd.jpeg/productimages/224323151/w1600xh1600/3063764006c2dfabad23cfe9ee48f7c2b2621221.jpeg?1751785678"}, {"name": "タグ", "count": 2, "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/e522588156a753dd1c840f202e6859532f5690a8.jpeg/productimages/183990085/w1600xh1600/eba694fd73e1ba2ddc5b5bd53a105e3c67665670.jpeg?1694668931"}, {"name": "その他", "count": 5, "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/fd7c461cb898537b46b769866662b891d6ee67c0.jpeg/productimages/221514376/w1600xh1600/c64371c7287d8a589415ecf85a303350ce53689a.jpeg?1747402323"}, {"name": "芳名帳", "count": 1, "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/2ce8171a046c81ffa63ab3959251290908a95dac.jpeg/productimages/216793140/w1600xh1600/efd5cca38441607fe42e03251ea01e5db9868144.jpeg?1740051522"}, {"name": "ベビー", "count": 1, "img": "https://image.minne.com/minne/mobile_app_product/680x680cq85/24b27e912257781ffb58f0021db4c66daacdda72.jpeg/productimages/239708033/w1600xh1600/d5316eab0eeebec2645b5a6fba63f024077b521c.jpg?1777779297"}];
+const REVIEWS = [{"product": "金箔 席札（二つ折り）", "name": "ぴゅん子", "text": "迅速に対応していただき、素敵で可愛い席札が届きとても満足です！金箔も剥がれなかったです。", "date": "2026.1.16"}, {"product": "金箔 席札（二つ折り）", "name": "rinechin", "text": "紙質も金箔もイメージ通りで、とてもステキな作品でした。臨機応変なご対応ありがとうございました！", "date": "2025.12.14"}, {"product": "金箔 席札（通常）", "name": "Rosy Porty", "text": "金箔デザインがシンプルでも華やかで、とても気に入りました！急遽のお願いも迅速丁寧に対応いただけました。", "date": "2025.10.5"}];
+const yen = n => '¥' + Number(n).toLocaleString('ja-JP');
+const catGrid = document.getElementById('catGrid');
+CATS.forEach(c => {
+  const d = document.createElement('div');
+  d.className = 'cat-tile';
+  d.innerHTML = `<img src="${c.img}" alt="${c.name}" loading="lazy"><div class="cap"><div class="n">${c.name}</div><div class="c">${c.count} ITEMS</div></div>`;
+  d.onclick = () => { setFilter(c.name); document.getElementById('works').scrollIntoView({behavior:'smooth'}); };
+  catGrid.appendChild(d);
+});
+const rental = document.createElement('a');
+rental.className = 'cat-tile';
+rental.href = 'https://www.instagram.com/asari.made/';
+rental.target = '_blank'; rental.rel = 'noopener';
+rental.innerHTML = `<img src="${PRODUCTS[10].img}" alt="ウェルカムスペース" loading="lazy"><div class="cap"><div class="n">ウェルカムスペース レンタル</div><div class="c">RENTAL — ASK ON INSTAGRAM</div></div>`;
+catGrid.appendChild(rental);
+
+const filterEl = document.getElementById('filter');
+const names = ['すべて', ...CATS.map(c => c.name)];
+let cur = 'すべて';
+names.forEach(n => {
+  const b = document.createElement('button');
+  b.className = 'chip' + (n === 'すべて' ? ' on' : '');
+  b.textContent = n;
+  b.onclick = () => setFilter(n);
+  filterEl.appendChild(b);
+});
+function setFilter(n) {
+  cur = n;
+  [...filterEl.children].forEach(b => b.classList.toggle('on', b.textContent === n));
+  render();
+}
+const grid = document.getElementById('grid');
+function render() {
+  grid.innerHTML = '';
+  PRODUCTS.filter(p => cur === 'すべて' || p.cat === cur).forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<div class="ph"><img src="${p.img}" alt="${p.name}" loading="lazy">${p.badge ? `<span class="badge ${p.badgeType === 'new' ? 'new' : ''}">${p.badge}</span>` : ''}</div>
+      <div class="bd"><div class="nm">${p.name}</div>
+      <div class="pr">${yen(p.price)} <small>/ ${p.unit}${p.perUnit ? '（' + p.perUnit + '）' : ''}</small></div>
+      <div class="meta"><span>${p.cat}</span><span class="fav">♡ ${p.favorites}</span></div></div>`;
+    card.onclick = () => openModal(p);
+    grid.appendChild(card);
+  });
+}
+render();
+const vg = document.getElementById('voices');
+REVIEWS.forEach(r => {
+  const d = document.createElement('div');
+  d.className = 'voice';
+  d.innerHTML = `<div class="tx">${r.text}</div><div class="mt"><span class="pn">${r.product}</span><span>${r.name} さま ・ ${r.date}</span></div>`;
+  vg.appendChild(d);
+});
+const modal = document.getElementById('modal');
+function openModal(p) {
+  document.getElementById('mImg').src = p.img;
+  document.getElementById('mName').textContent = p.name;
+  document.getElementById('mEn').textContent = p.nameEn || '';
+  document.getElementById('mPrice').innerHTML = yen(p.price) + ` <small>/ ${p.unit}${p.perUnit ? '（' + p.perUnit + '）' : ''}</small>`;
+  document.getElementById('mDesc').textContent = (p.desc || '').replace(/\\n/g, '\n');
+  document.getElementById('mMinne').href = p.link;
+  modal.classList.add('open');
+}
+document.getElementById('modalClose').onclick = () => modal.classList.remove('open');
+modal.onclick = e => { if (e.target === modal) modal.classList.remove('open'); };
+</script>
+</body>
+</html>
