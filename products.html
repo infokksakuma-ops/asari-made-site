@@ -140,18 +140,7 @@ footer{background:var(--warm);border-top:1px solid var(--border);margin-top:30px
   </div>
 </header>
 
-<div class="hero" id="top">
-  <div>
-    <div class="kicker">HANDMADE WEDDING ITEMS</div>
-    <h1><span class="en">Asari.made</span>結婚式のペーパーアイテムを、<br>一枚ずつ手作りで。</h1>
-    <p>席札・メニュー表・サンキュータグなど、ウェディングの紙ものを一枚ずつ手作りしています。</p>
-    <div class="cta">
-      <a class="btn solid" href="https://asarimade.base.shop" target="_blank" rel="noopener">BASEショップを見る</a>
-      <a class="btn rose" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram @asari.made</a>
-    </div>
-  </div>
-  <div class="hero-img"><img src="https://image.minne.com/minne/mobile_app_product/680x680cq85/ba20737870022ea994c3bf9e77e6c7f5cdc59003.jpeg/productimages/191539393/w1600xh1600/9933c6cf569dbbbfb86bf9df6ea8a5c006f235d1.jpeg?1704779702" alt="金箔席札（二つ折り）｜Asari.made 人気No.1の結婚式席札"></div>
-</div>
+<div style="max-width:1120px;margin:0 auto;padding:26px 20px 0"><p style="font-size:12.5px;color:var(--mid)"><a href="index.html" style="color:var(--deep-rose)">トップ</a> ＞ 作品一覧</p></div>
 
 
 
@@ -162,19 +151,6 @@ footer{background:var(--warm);border-top:1px solid var(--border);margin-top:30px
   <div class="grid" id="grid"></div>
   <p style="text-align:center;margin-top:28px;font-size:12.5px;color:var(--mid)">ご購入は各作品のページ（minne）または <a href="https://asarimade.base.shop" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline">BASEショップ</a> からどうぞ。</p>
 </section>
-
-      <h2>制作の様子、のぞけます</h2>
-      <p>制作の裏側や日々の様子をSNSで発信中です。</p>
-      <div class="cta">
-        <a class="btn" href="https://www.tiktok.com/@.asari.made" target="_blank" rel="noopener">TikTok</a>
-        <a class="btn" href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-    <div class="ph"><img src="https://image.minne.com/minne/mobile_app_product/680x680cq85/8510b7a139c90a30a2b0f85423b475ee176ce23e.jpeg/productimages/187626559/w1600xh1600/1f70170bf434d132635736dc1244dbf4f69ab50a.jpeg?1699364849" alt="金箔席札を制作する様子｜Asari.made"></div>
-  </div>
-</div>
-
-
 <section id="about-items">
   <div class="sec-head"><div class="en">About</div><div class="jp">Asari.madeのペーパーアイテムについて</div></div>
   <div style="max-width:760px;margin:0 auto;font-size:13.5px;color:var(--mid)">
@@ -222,6 +198,7 @@ const CATS = [{"name": "席札", "count": 6, "img": "https://image.minne.com/min
 const REVIEWS = [{"product": "金箔 席札（二つ折り）", "name": "ぴゅん子", "text": "迅速に対応していただき、素敵で可愛い席札が届きとても満足です！金箔も剥がれなかったです。", "date": "2026.1.16"}, {"product": "金箔 席札（二つ折り）", "name": "rinechin", "text": "紙質も金箔もイメージ通りで、とてもステキな作品でした。臨機応変なご対応ありがとうございました！", "date": "2025.12.14"}, {"product": "金箔 席札（通常）", "name": "Rosy Porty", "text": "金箔デザインがシンプルでも華やかで、とても気に入りました！急遽のお願いも迅速丁寧に対応いただけました。", "date": "2025.10.5"}];
 const yen = n => '¥' + Number(n).toLocaleString('ja-JP');
 const catGrid = document.getElementById('catGrid');
+if (catGrid) {
 CATS.forEach(c => {
   const d = document.createElement('div');
   d.className = 'cat-tile';
@@ -235,6 +212,7 @@ rental.href = 'https://www.instagram.com/asari.made/';
 rental.target = '_blank'; rental.rel = 'noopener';
 rental.innerHTML = `<img src="${PRODUCTS[10].img}" alt="ウェルカムスペース レンタル｜Asari.made 結婚式" loading="lazy"><div class="cap"><div class="n">ウェルカムスペース レンタル</div><div class="c">RENTAL — ASK ON INSTAGRAM</div></div>`;
 catGrid.appendChild(rental);
+}
 
 const filterEl = document.getElementById('filter');
 const names = ['すべて', ...CATS.map(c => c.name)];
@@ -266,6 +244,8 @@ function render() {
   });
 }
 render();
+const _h = decodeURIComponent((location.hash || '').slice(1));
+if (names.includes(_h)) setFilter(_h);
 const vg = null;
 const modal = document.getElementById('modal');
 function openModal(p) {
