@@ -73,4 +73,9 @@
       <image:caption>席札 通常（展示中）｜結婚式ペーパーアイテム Asari.made</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://infokksakuma-ops.github.io/asari-made-site/products.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
