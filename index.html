@@ -153,6 +153,9 @@ nav.main,.hd-btns{display:none!important}
 .d-sub{display:block;font-size:13.5px;letter-spacing:.05em;color:#6f6a64;padding:8px 0}
 .d-sub:hover{color:var(--charcoal)}
 @media(max-width:640px){.hd-icons{gap:15px}.hd-icons svg{width:20px;height:20px}}
+
+header{transition:background .35s ease,border-bottom-color .35s ease}
+header.scrolled{background:rgba(250,248,244,.42);border-bottom-color:transparent}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Asari.made", "url": "https://infokksakuma-ops.github.io/asari-made-site/", "sameAs": ["https://www.instagram.com/asari.made/", "https://asarimade.base.shop", "https://minne.com/@asari18"]}</script>
 
@@ -195,6 +198,9 @@ nav.main,.hd-btns{display:none!important}
 </aside>
 <script>
 (function(){var d=document.getElementById('drawer'),s=document.getElementById('scrim'),o=document.getElementById('drawerBtn'),c=document.getElementById('drawerClose');function open(){d.classList.add('open');s.classList.add('show');d.setAttribute('aria-hidden','false')}function close(){d.classList.remove('open');s.classList.remove('show');d.setAttribute('aria-hidden','true')}if(o)o.addEventListener('click',open);if(c)c.addEventListener('click',close);if(s)s.addEventListener('click',close);d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});})();
+</script>
+<script>
+;(function(){var h=document.querySelector('header');function on(){if(window.scrollY>10){h.classList.add('scrolled')}else{h.classList.remove('scrolled')}}window.addEventListener('scroll',on,{passive:true});on();})();
 </script>
 
 
