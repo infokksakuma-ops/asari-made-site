@@ -161,6 +161,24 @@ header.scrolled{background:rgba(250,248,244,.42);border-bottom-color:transparent
 .ft-sub a{color:var(--mid);text-decoration:underline}
 .d-small{margin-top:20px;font-size:12px;color:#9a958e;letter-spacing:.06em}
 .d-small a{color:#9a958e;text-decoration:underline}
+
+/* MILOUS-style box buttons */
+.btn{border:1px solid var(--charcoal);border-radius:0;background:#fff;color:var(--charcoal);padding:12px 26px;font-size:12.5px;letter-spacing:.16em}
+.btn.solid{background:var(--charcoal);border-color:var(--charcoal);color:#fff}
+.btn.rose{border-color:var(--charcoal);color:var(--charcoal)}
+.btn.line{background:#fff;border-color:var(--charcoal);color:var(--charcoal)}
+.mbtn{display:flex;align-items:center;gap:15px;border:1px solid var(--charcoal);background:#fff;color:var(--charcoal);padding:15px 18px;width:100%;transition:.25s;text-align:left}
+.mbtn:hover{background:var(--charcoal);color:#fff}
+.mbtn:hover .mbtn-jp{color:rgba(255,255,255,.78)}
+.mbtn-ic{display:flex;color:var(--charcoal);flex:none}
+.mbtn:hover .mbtn-ic{color:#fff}
+.mbtn-ic svg{width:27px;height:27px}
+.mbtn-tx{display:block}
+.mbtn-en{display:block;font-family:'Cormorant Garamond',serif;font-size:17.5px;letter-spacing:.2em;line-height:1.25}
+.mbtn-jp{display:block;font-size:11px;color:var(--mid);letter-spacing:.08em;margin-top:2px}
+.mbtn-ar{margin-left:auto;font-size:17px;flex:none}
+.mbtn-stack{display:flex;flex-direction:column;gap:12px;max-width:430px;width:100%}
+.ft-in .mbtn-stack{margin:22px auto 4px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Asari.made", "url": "https://infokksakuma-ops.github.io/asari-made-site/", "sameAs": ["https://www.instagram.com/asari.made/", "https://asarimade.base.shop", "https://minne.com/@asari18"]}</script>
 
@@ -236,10 +254,7 @@ header.scrolled{background:rgba(250,248,244,.42);border-bottom-color:transparent
 <footer>
   <div class="ft-in">
     <div class="logo">Asari.made</div>
-    <div class="sns">
-      <a class="btn line" href="https://lin.ee/J7tN4Voj" target="_blank" rel="noopener">LINEで問い合わせる</a>
-      <a class="btn" href="https://asarimade.base.shop" target="_blank" rel="noopener">BASEショップ</a>
-    </div>
+    <div class="mbtn-stack"><a class="mbtn" href="https://lin.ee/J7tN4Voj" target="_blank" rel="noopener"><span class="mbtn-ic"><svg viewBox="0 0 24 24"><rect x="1.6" y="1.6" width="20.8" height="20.8" rx="5.5" fill="currentColor"/><text x="12" y="15.4" font-size="6.2" font-family="Arial,Helvetica,sans-serif" font-weight="bold" fill="#fff" text-anchor="middle" letter-spacing=".4">LINE</text></svg></span><span class="mbtn-tx"><span class="mbtn-en">OFFICIAL LINE</span><span class="mbtn-jp">お問い合わせはこちら</span></span><span class="mbtn-ar">→</span></a><a class="mbtn" href="https://asarimade.base.shop" target="_blank" rel="noopener"><span class="mbtn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M5.3 8h13.4l-1.1 12.3H6.4L5.3 8z"/><path d="M9 10V6.4a3 3 0 0 1 6 0V10"/></svg></span><span class="mbtn-tx"><span class="mbtn-en">ONLINE SHOP</span><span class="mbtn-jp">アイテムのご購入はこちら</span></span><span class="mbtn-ar">→</span></a></div>
     <div class="ft-sub"><a href="https://minne.com/@asari18" target="_blank" rel="noopener">minne</a> ｜ <a href="https://www.instagram.com/asari.made/" target="_blank" rel="noopener">Instagram</a></div>
     <div class="copy">© Asari.made</div>
   </div>
