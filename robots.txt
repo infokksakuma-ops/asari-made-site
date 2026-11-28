@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://infokksakuma-ops.github.io/asari-made-site/sitemap.xml
+Sitemap: https://asari-made-site.vercel.app/sitemap.xml
